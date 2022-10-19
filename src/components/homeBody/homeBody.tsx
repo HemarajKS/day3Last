@@ -1,13 +1,13 @@
-import Modal from '../Modal/modal'
-import './homeBody.css'
-import { useState } from 'react'
+import Modal from '../Modal/modal';
+import './homeBody.css';
+import { useState } from 'react';
 
 const HomeBody = () => {
-  const [toggle, setToggle] = useState(false)
-  const [modal, setModal] = useState('')
-  const [element, setElement] = useState({})
-  const [Index, setIndex] = useState(0)
-  const [search, setSearch] = useState('')
+  const [toggle, setToggle] = useState(false);
+  const [modal, setModal] = useState('');
+  const [element, setElement] = useState({});
+  const [Index, setIndex] = useState(0);
+  const [search, setSearch] = useState('');
 
   const data: any = [
     {
@@ -19,22 +19,22 @@ const HomeBody = () => {
       notes: '',
       icon: require(`../../assets/icons/LinkdIn.png`),
     },
-  ]
+  ];
 
-  const currentUser = JSON.stringify(localStorage.getItem('currentUser') || '')
+  const currentUser = JSON.stringify(localStorage.getItem('currentUser') || '');
 
   if (localStorage.getItem(currentUser) === null) {
-    localStorage.setItem(currentUser, JSON.stringify([]))
+    localStorage.setItem(currentUser, JSON.stringify([]));
   }
 
   const previousData: any = JSON.parse(
-    localStorage.getItem(currentUser) || '[]',
-  )
+    localStorage.getItem(currentUser) || '[]'
+  );
 
   const filteredData = previousData.filter((ele: any) =>
-    ele.siteName.toLowerCase().includes(search.toLowerCase()),
-  )
-  console.log(filteredData)
+    ele.siteName.toLowerCase().includes(search.toLowerCase())
+  );
+  console.log(filteredData);
 
   return (
     <div className="homeBodyContainer">
@@ -54,7 +54,7 @@ const HomeBody = () => {
               className="searchbar"
               placeholder="Search"
               onChange={(e: any) => {
-                setSearch(e.target.value)
+                setSearch(e.target.value);
               }}
             />
             <img
@@ -66,8 +66,8 @@ const HomeBody = () => {
           <div
             className="headerAddButton"
             onClick={() => {
-              setModal('Add Site')
-              setToggle(true)
+              setModal('Add Site');
+              setToggle(true);
             }}
             style={{ cursor: 'pointer' }}
           >
@@ -96,10 +96,10 @@ const HomeBody = () => {
                     key={index}
                     className="cardContents"
                     onClick={() => {
-                      setModal('Site Details')
-                      setElement(ele)
-                      setToggle(true)
-                      setIndex(index)
+                      setModal('Site Details');
+                      setElement(ele);
+                      setToggle(true);
+                      setIndex(index);
                     }}
                   >
                     <div className="cardUpper">
@@ -133,7 +133,7 @@ const HomeBody = () => {
                     </div>
                     <div className="cardLink">{ele.url}</div>
                   </div>
-                )
+                );
               })}
             </div>
           )}
@@ -144,7 +144,7 @@ const HomeBody = () => {
             <div className="closeBtnContainer">
               <button
                 onClick={() => {
-                  setToggle(false)
+                  setToggle(false);
                 }}
                 className="closeBtn"
               >
@@ -160,7 +160,7 @@ const HomeBody = () => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HomeBody
+export default HomeBody;

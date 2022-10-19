@@ -200,4 +200,14 @@
     top: 18px;
     right: 0;
   }
+  .modalTitle {
+    position: fixed;
+    top: 16px;
+    left: 83px;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 100;
+    /* font-size: 26px; */
+    /* margin-bottom: 0; */
+  }
 }

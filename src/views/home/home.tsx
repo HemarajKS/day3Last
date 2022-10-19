@@ -1,7 +1,7 @@
-import HomeBody from '../../components/homeBody/homeBody'
-import SideBar from '../../components/sideBar/sideBar'
-import TopBar from '../../components/topBar/topBar'
-import './home.css'
+import HomeBody from '../../components/homeBody/homeBody';
+import SideBar from '../../components/sideBar/sideBar';
+import TopBar from '../../components/topBar/topBar';
+import './home.css';
 
 const Home = () => {
   return (
@@ -28,6 +28,10 @@ const Home = () => {
             <img
               src={require('../../assets/icons/search (2).png')}
               alt="search"
+              id="searchIcon"
+              onClick={() => {
+                document.getElementById('searchIcon')?.classList.add('flex');
+              }}
             />
             <img src={require('../../assets/icons/sync_icn.png')} alt="sync" />
             <img
@@ -41,7 +45,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

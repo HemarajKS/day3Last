@@ -110,8 +110,9 @@ const HomeBody = () => {
                         ) : (
                           // eslint-disable-next-line jsx-a11y/alt-text
                           <img
-                            src={require('../../assets/icons/logo (2).png')}
+                            src={require('../../assets/icons/Twitter.png')}
                             height="50px"
+                            width="50px"
                             style={{
                               backgroundPosition: 'cover',
                               borderRadius: '50%',
